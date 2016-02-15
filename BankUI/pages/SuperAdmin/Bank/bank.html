@@ -1,0 +1,252 @@
+﻿<div ng-controller="bankController">
+    <ng-include src="'pages/sidebar/sidebar.html'"></ng-include>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <!-- Info boxes -->
+            <div class="box box-info">
+
+                <div class="box-header with-border">
+                    <section class="content-header">
+                        <h1>
+                            Bank
+                            <small> </small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li><a href="#/home"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li class="active">Bank</li>
+                        </ol>
+                    </section>
+                </div>
+            </div><!-- /.box-header -->
+
+            <div class="row">
+
+                <!--panel 1-->
+                <!--<div class="col-md-5">
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">Admin Name Listing</h4>
+                    </div>
+                    <div class="box-body">
+
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 10px">Sr.No</th>
+                                <th>Name</th>
+                                <th style="width: 20px">Update</th>
+                                <th style="width: 20px">Delete</th>
+                            </tr>
+                            <tbody>
+                                <tr ng-repeat="data in getBank" ng-hide="data.Deleted==true">
+
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{data.BankName}}</td>
+
+                                    <th>
+                                        <a ng-click="editBank(id=data.ID)" class="btn btn-info btn-sm" style="padding:0px"><i class="glyphicon glyphicon-edit"></i> </a>
+                                    </th>
+                                    <th>
+                                        <a ng-click="deleteBank(id=data.ID)" class="btn btn-danger btn-sm" style="padding:0px"><i class="glyphicon glyphicon-trash"></i> </a>
+                                    </th>
+
+                                </tr>
+                                <tr class="bg-info" ng-show="!getBank">
+                                    <td colspan="5">Loading.....</td>
+                                </tr>
+                            </tbody>
+
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>-->
+                <!--panel 2-->
+
+                <div class="col-md-8">
+                    <div class="box box-primary">
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Add Bank</h3>
+                            </div>
+                            <form class="form-horizontal" name="signup1" role="form">
+                                <div class="box-body">
+
+
+                                    <div class="form-group" style="display:none;">
+                                        <label for="inputEmail3" class="col-sm-4 control-label">Bank Id</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="BankId" />
+                                            <input type="text" ng-model="createdDate" />
+                                            <input type="text" ng-model="updatedDate" />
+                                        </div>
+                                    </div>
+                                    <!--name validation start-->
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-4 control-label">Bank Name:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="bankname" />
+                                        </div>
+                                    </div>
+                                    <!--name validation end-->
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-4 control-label">Super Admin Id:</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" ng-model="superAdminId">
+                                                <option value="">Select SuperAdmin</option>
+                                                <option ng-repeat="data in getSuperAdmin" value="{{data.ID}}">{{data.SuperAdminName}}</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-4 control-label">Admin Id:</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" ng-model="adminId">
+                                                <option value="">Select Admin</option>
+                                                <option ng-repeat="data in getAdmin" value="{{data.ID}}">{{data.SuperAdminName}}</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Bank Short Name:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="bankShortName" name="description" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <!--Description validation start-->
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Bank Address:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="bankAddress" name="bankAddress" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Registration No.:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="registrationNo" name="registrationNo" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <!--Description validation end-->
+                                    <!--Description validation start-->
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Contact No 1:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="contactNo1" name="contactNo1" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Contact No 2:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="contactNo2" name="contactNo2" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Working Hours:</label>
+
+                                        <div class="col-sm-8">
+                                            <div class="col-sm-4">
+                                                <div class="col-sm-2"><input type="text" class="form-control" ng-model="workingHoursAm" name="workingHoursAm" id="inputPassword3" value="" placeholder="" required></div>
+                                                <div class="col-sm-2">
+                                                    <select ng-model="am" class="form-control">
+
+                                                        <option value="AM">AM</option>
+                                                        <option value="PM">PM</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="col-sm-2">
+                                                    <input type="text" class="form-control" ng-model="contactNo" name="workingHoursPm" id="workingHoursPm" value="" placeholder="" required>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <select ng-model="" class="form-control">
+                                                        <option value="AM">AM</option>
+                                                        <option value="PM">PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!--Description validation end-->
+                                    <!--Description validation start-->
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Website:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="Website" name="Website" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+
+                                    </div>
+                                    <!--Description validation end-->
+                                    <!--Description validation start-->
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Pin Code:</label>
+
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" ng-model="pinCode" name="description" id="inputPassword3" value="" placeholder="" required>
+                                        </div>
+
+                                    </div>
+                                    <!--Description validation end-->
+                                    <!--Description validation start-->
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Product:</label>
+
+                                        <div class="col-sm-8">
+                                            <select type="text" class="form-control" ng-model="produntId" name="produntId" id="inputPassword3" value="" placeholder="">
+                                                <option value="">Select Product</option>
+                                                <option ng-repeat="data in getProduct" value="{{data.ID}}">{{data.ProductName}}</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-4 control-label">Langauge:</label>
+
+                                        <div class="col-sm-8">
+                                            <select type="text" class="form-control" ng-model="langaugeId" name="langaugeId" id="inputPassword3" value="" placeholder="">
+                                                <option value="">Select Langauge</option>
+                                                <option ng-repeat="data in getLanguage" value="{{data.ID}}">{{data.LanguageName}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+                                </div><!-- /.box-body -->
+                                <div class="box-footer">
+                                    <a ng-click="save()" class=" btn btn-success col-sm-8">Save</a>
+                                    <!--<a ng-click="updateBank()" class=" btn btn-info col-sm-8" ng-show="btnUpdate">Update</a>-->
+                                    <a ng-click="cancelAndNew()" class="btn btn-danger pull-right">Cancel</a>
+                                </div><!-- /.box-footer -->
+
+                            </form>
+                            <br />
+                            <br />
+                        </div>
+                    </div><!-- /. box -->
+                </div><!-- /.col -->
+            </div>
+        </section>
+
+    </div>
+    
+    <ng-include class="navbar-fixed-bottom" src="'bankPages/sidebar/footer.html'"></ng-include>
+</div>

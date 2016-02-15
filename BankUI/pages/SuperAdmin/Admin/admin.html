@@ -1,0 +1,224 @@
+﻿<div ng-controller="adminController">
+    <ng-include src="'pages/sidebar/sidebar.html'"></ng-include>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Info boxes -->
+          
+            <div class="row">
+
+
+                    <!--panel 1-->
+                    <div class="col-md-10">
+                        <div class="box box-primary">
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Add Admin</h3>
+                                </div>
+                                <form class="form-horizontal" name="signup1" role="form">
+                                    <div class="box-body">
+
+                                        <div class="form-group" style="display:none">
+                                            <label for="inputEmail3" class="col-sm-4 control-label">ID:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="ID" id="inputEmail3" placeholder="">
+                                            </div>
+                                        </div>
+
+
+
+                                        <!--name validation start-->
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Name:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="name" name="name" id="inputPassword3" value="" ng-pattern="/^[A-Za-z\s]*$/" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:300px;" ng-show="signup1.name.$dirty && signup1.name.$invalid">
+                                                <small class="error" ng-show="signup1.name.$error.required"><b>please enter text</b></small>
+                                                <small class="error" ng-show="signup1.name.$error.pattern"><b>please enter characters</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--name validation end-->
+
+                                        <!--designation validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Designation:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="designation" name="designation" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.designation.$dirty && signup1.designation.$invalid">
+                                                <small class="error" ng-show="signup1.designation.$error.required"><b>please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--designation validation end-->
+
+
+                                        <!--contactNo1 validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Contact No 1:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="contactNo1" name="contactNo1" id="inputPassword3" ng-pattern="/^[0-9\s]*$/" minlength="10" maxlength="12" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.contactNo1.$dirty && signup1.contactNo1.$invalid">
+                                                <small class="error" ng-show="signup1.contactNo1.$error.required"><b>please enter text</b></small>
+                                                <small class="error" ng-show="signup1.contactNo1.$error.pattern"><b>please enter numeric only</b></small>
+                                                <small class="error" ng-show="signup1.contactNo1.$error.minlength"><b>please enter minimum 10 digits</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--contactNo1 validation end-->
+
+                                        <!--contactNo2 validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Contact No 2:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="contactNo2" name="contactNo2" id="inputPassword3" value="" ng-pattern="/^[0-9\s]*$/" minlength="10" maxlength="12" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.contactNo2.$dirty && signup1.contactNo2.$invalid">
+                                                <small class="error" ng-show="signup1.contactNo2.$error.required"><b>please enter text</b></small>
+                                                <small class="error" ng-show="signup1.contactNo2.$error.pattern"><b>please enter numeric only</b></small>
+                                                <small class="error" ng-show="signup1.contactNo2.$error.minlength"><b>please enter minimum 10 digits</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--contactNo2 validation end-->
+
+                                        <!--address1 validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Address 1:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="address1" name="address1" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.address1.$dirty && signup1.address1.$invalid">
+                                                <small class="error" ng-show="signup1.address1.$error.required"><b>Please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--address1 validation end-->
+
+                                        <!--address2 validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Address 2:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="address2" name="address2" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.address2.$dirty && signup1.address2.$invalid">
+                                                <small class="error" ng-show="signup1.address2.$error.required"><b>Please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--address2 validation end-->
+
+                                        <!--Email-Id validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Email-Id:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="emailId" name="emailId" id="inputPassword3" ng-pattern="/^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*(\.[A-Za-z]{2,15})$/" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.emailId.$dirty && signup1.emailId.$invalid">
+                                                <small class="error" ng-show="signup1.emailId.$error.required"><b>please enter text</b></small>
+                                                <small class="error" ng-show="signup1.emailId.$error.pattern"><b>please enter valid Email-Id</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--Email-Id validation end-->
+
+                                        <!--Bank validation start-->
+                                        <div class="form-group">
+                                            <label for="inputEmail3" class="col-sm-4 control-label">Bank:</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" ng-model="bank">
+                                                    <option value="">Select Bank</option>
+                                                    <option value="{{data.ID}}" ng-repeat="data in getBank" ng-hide="data.Deleted==true">
+                                                        {{data.BankName}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--Bank validation end-->
+
+                                        <!--username validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Username:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="username" name="username" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.username.$dirty && signup1.username.$invalid">
+                                                <small class="error" ng-show="signup1.username.$error.required"><b>please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--username validation end-->
+
+                                        <!--Password validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Password:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="password" name="password" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.password.$dirty && signup1.password.$invalid">
+                                                <small class="error" ng-show="signup1.password.$error.required"><b>please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--Password validation end-->
+
+                                        <!--Confirm Password validation start-->
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-4 control-label">Confirm Password:</label>
+
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" ng-model="ConfirmPassword" name="ConfirmPassword" id="inputPassword3" value="" placeholder="" required>
+                                            </div>
+                                            <!-- Error Defination -->
+                                            <div class="error-container" style="margin-bottom: 5px; margin-left:170px;" ng-show="signup1.ConfirmPassword.$dirty && signup1.ConfirmPassword.$invalid">
+                                                <small class="error" ng-show="signup1.ConfirmPassword.$error.required"><b>please enter text</b></small>
+                                            </div>
+                                            <!-- Error Defination End -->
+                                        </div>
+                                        <!--Confirm Password validation end-->
+
+
+                                    </div><!-- /.box-body -->
+                                    <div class="box-footer">
+                                        <a ng-click="save()" class=" btn btn-success col-sm-8">Save</a>
+                                        <a ng-click="cancel()" class="btn btn-danger pull-right">Cancel</a>
+                                    </div><!-- /.box-footer -->
+                                </form>
+                            </div>
+                        </div><!-- /. box -->
+                    </div><!-- /.col -->
+               
+
+            </div>
+        </section>
+
+
+
+
+    </div>
+
+    <ng-include class="navbar-fixed-bottom" src="'bankPages/sidebar/footer.html'"></ng-include>
+
+</div>
